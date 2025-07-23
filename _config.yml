@@ -68,3 +68,9 @@ seo:
     links:
       - "https://github.com/aladinodigitale"
 
+exclude:
+  - docs
+  - CHANGELOG.md
+  - Gemfile
+  - Gemfile.lock
+  - test
