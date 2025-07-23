@@ -20,10 +20,11 @@ author:
       url: "https://www.linkedin.com/company/aladinodigitale"
 
 # Tema
-theme: minimal-mistakes-jekyll
+theme: "mmistakes/minimal-mistakes@4.24.0"
 locale: "it-IT"
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
