@@ -20,7 +20,7 @@ author:
       url: "https://www.linkedin.com/company/aladinodigitale"
 
 # Tema
-theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes"
 locale: "it-IT"
 
 plugins:
