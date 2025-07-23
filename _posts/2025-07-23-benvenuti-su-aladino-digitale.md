@@ -1,6 +1,6 @@
 ---
 title: "Benvenuti su Aladino Digitale"
-date: 2025-07-24 01:00:00 +0200
+date: 2025-07-23 01:00:00 +0200
 categories: [blog]
 tags: [ai-generativa, immagini, codice, video]
 excerpt: "Un nuovo spazio dedicato all'intelligenza artificiale generativa, con esempi reali, tutorial pratici e news fresche. Ecco cosa troverai qui."
