@@ -1,40 +1,39 @@
 ---
 title: "Benvenuti su Aladino Digitale"
-date: 2025-07-23 01:00:00 +0200
-categories: [blog]
-tags: [ai-generativa, immagini, codice, video]
-excerpt: "Un nuovo spazio dedicato all'intelligenza artificiale generativa, con esempi reali, tutorial pratici e news fresche. Ecco cosa troverai qui."
-author_profile: true
+date: 2025-07-23
+layout: single
+author_profile: false
 read_time: true
+excerpt: "Perché Aladino Digitale? Perché oggi esprimere desideri attraverso i prompt è un'arte, quasi magica..."
 ---
 
-Benvenuti nel mio laboratorio digitale! 🧪✨
+{% include figure image_path="/assets/images/aladino-genio-ai.png"
+   alt="Aladino e il Genio digitale"
+   caption="Con la generative AI, il prompt è la nuova lampada magica." 
+   width="100%" %}
 
-**Aladino Digitale** nasce per raccontare in modo semplice e concreto come l’**intelligenza artificiale generativa** può essere utilizzata nella vita reale – che tu voglia creare immagini con Stable Diffusion, video con Runway o automatizzare codice con strumenti come Copilot o GPT.
+**Benvenuti su Aladino Digitale!**
+
+Perché questo nome?
+
+Perché con l'avvento della generative AI sembra davvero di vivere un'epoca in cui esprimere un desiderio – sotto forma di prompt – può far apparire immagini, video o codice, come per magia.
+
+Proprio come nella storia di Aladino, dove un desiderio ben formulato può cambiare tutto, anche oggi serve attenzione a **cosa chiediamo**, e **come** lo chiediamo.
+
+Il parallelismo è affascinante:
+- Nella fiaba, **la lampada** è lo strumento magico; nella realtà, sono i modelli di AI generativa.
+- Il **desiderio espresso** è il prompt.
+- Il **genio** è l’intelligenza artificiale, che può fare cose straordinarie… ma anche fraintendere.
+
+Chi padroneggia il linguaggio naturale, chi sa strutturare bene le richieste (prompt engineering, context building), ottiene molto di più – come chi nella fiaba sa cosa chiedere davvero.
+
+E poi c'è un altro aspetto interessante: nella storia, i desideri sono **limitati**. Anche nella AI generativa, le risorse non sono infinite. Ogni richiesta ha un costo, spesso importante. Sfruttare bene ciò che si chiede, ridurre il numero di iterazioni, ottimizzare i risultati: anche questa è una forma di magia, fatta di metodo e consapevolezza.
 
 ---
 
-## 🎯 Cosa troverai qui
+Questo blog nasce proprio per raccontare tutto questo.  
+Con un taglio **pratico**, **in italiano**, con tanti **esempi**, test su immagini, video, prompt, codice, modelli open source, e un pizzico di spirito critico.
 
-- **Tutorial e mini-guide pratiche**: niente teoria fine a sé stessa, ma casi reali.
-- **Esperimenti personali**: flussi di lavoro testati e usati direttamente da me.
-- **Novità nel mondo AI**: uscite di nuovi modelli, tool interessanti, trend da conoscere.
-
----
-
-## 🔜 Prossimi articoli
-
-Ecco alcune cose che ho in cantiere:
-
-- TDB 1
-- TBD 2
-- TBD 3
-
----
-
-Grazie per essere qui!
-Se vuoi rimanere aggiornato, iscriviti alla newsletter (in arrivo) o seguimi su [GitHub](https://github.com/aladinodigitale) o LinkedIn.
-
-A presto,  
-**Alessio**
+Benvenuti nel mio viaggio.  
+Siete liberi di sognare — ma ricordate: la magia funziona meglio con un buon prompt ✨
 
