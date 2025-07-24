@@ -17,7 +17,9 @@ Il sistema risponde evidenziando le porzioni esatte dell’immagine, andando ben
 
 ## 💡 Caso d’uso 1 – Identificazione di un rischio elettrico
 
-![Plafoniera danneggiata](/assets/images/segmentazione-gemini/plafoniera-rotta.png)
+<a href="/assets/images/segmentazione-gemini/plafoniera-rotta.png" target="_blank">
+  <img src="/assets/images/segmentazione-gemini/plafoniera-rotta.png" alt="Plafoniera danneggiata" />
+</a>
 
 In questa immagine, la richiesta al modello è:
 
@@ -32,7 +34,9 @@ Un sistema di sorveglianza monitora il giardino. Prima che parta il tagliaerba a
 
 ### 📸 Immagine 1 – Situazione iniziale
 
-![Giardino ripreso da videocamera](/assets/images/segmentazione-gemini/giardino-iniziale.png)
+<a href="/assets/images/segmentazione-gemini/giardino-iniziale.png" target="_blank">
+  <img src="/assets/images/segmentazione-gemini/giardino-iniziale.png" alt="Giardino ripreso da videocamera" />
+</a>
 
 Prompt dato al modello:
 
@@ -40,7 +44,9 @@ Prompt dato al modello:
 
 ### ✅ Risultato del modello
 
-![Oggetti pericolosi evidenziati](/assets/images/segmentazione-gemini/giardino-segmentato.png)
+<a href="/assets/images/segmentazione-gemini/giardino-segmentato.png" target="_blank">
+  <img src="/assets/images/segmentazione-gemini/giardino-segmentato.png" alt="Oggetti pericolosi evidenziati" />
+</a>
 
 Notare come:
 

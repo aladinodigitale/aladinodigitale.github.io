@@ -8,7 +8,7 @@ repository: "aladinodigitale/aladinodigitale.github.io"
 author:
   name: "Aladino Digitale"
   avatar: "/assets/images/avatar.png"
-  bio: "Esperimenti pratici con l'AI generativa: immagini, video, codice."
+  bio: "Esperimenti pratici con l'AI (generativa e non): immagini, video, codice."
   location: "Italia"
   email: "alessio@aladinodigitale.it"
   links:
