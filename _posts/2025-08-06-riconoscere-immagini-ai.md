@@ -1,16 +1,9 @@
 ---
 title: "Come riconoscere un'immagine generata da AI"
-date: 2025-08-07
+date: 2025-08-06
 categories: [AI, watermarking, C2PA]
+tags: [SynthID, AI, watermarking, C2PA, chatgpt]
 ---
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9btDaOcfIMY" title="SynthID - DeepMind" frameborder="0" allowfullscreen></iframe>
-
-![Verifica su contentcredentials.org](/assets/images/cr-check-chatgpt.png)
-![Verifica immagine passata in GIMP](/assets/images/cr-check-gimp.png)
-
-## 🖼️ Come riconoscere un'immagine generata da AI? Tra metadati, C2PA e watermark invisibili
-
 Con la diffusione esplosiva delle immagini generate da intelligenze artificiali come DALL·E, Midjourney, Firefly o Imagen, diventa sempre più importante **capire se un contenuto visivo è autentico o sintetico**.  
 Non per fare i detective digitali… ma per **trasparenza, responsabilità e sicurezza**.
 
@@ -49,25 +42,20 @@ I file così sigillati possono essere **verificati pubblicamente** con strumenti
 
 ### 🧪 Il mio test: metadati con e senza GIMP
 
-Ho generato un’immagine con ChatGPT (modello DALL·E 3), che integra automaticamente **Content Credentials** firmate da OpenAI.
+Ho generato un’immagine PNG con ChatGPT (modello DALL·E 3), che integra automaticamente **Content Credentials** firmate da OpenAI.
 
-🔍 **Immagine originale (formato PNG):**
+![chatgpt-woman-green.png](/assets/images/chatgpt-woman-green.png)
 
-![Verifica su contentcredentials.org](/assets/images/cr-check-chatgpt.png)  
-**→ L’immagine risulta firmata da OpenAI, con attributo "AI generated" e origine: ChatGPT.**
+A seguire, ho caricato l'immagine su [contentcredentials.org/verify](https://contentcredentials.org/verify) ed essa è stata correttamente riconosciuta come "AI generated" di origine "ChatGPT" (il tutto firmato da OpenAI).
 
-Poi ho aperto la stessa immagine con **GIMP** su Linux e l’ho risalvata in formato JPEG.  
-🔍 **Immagine modificata:**
+![Verifica su contentcredentials.org](/assets/images/cr-check_chatgpt.png)  
 
-![Verifica immagine passata in GIMP](/assets/images/cr-check-gimp.png)  
-**→ I metadati C2PA sono completamente scomparsi.**
+Poi ho aperto la stessa immagine con **GIMP** su Linux e l’ho riquadrata e risalvata in formato JPEG.  
 
-📂 Le immagini usate nel test:
+![chatgpt-woman-green-gimp.jpg](/assets/images/chatgpt-woman-green-gimp.jpg)
 
-- ![chatgpt-woman-green.png](/assets/images/chatgpt-woman-green.png)
-- ![chatgpt-woman-green-gimp.jpg](/assets/images/chatgpt-woman-green-gimp.jpg)
-
-🔎 Verifica diretta su: [contentcredentials.org/verify](https://contentcredentials.org/verify)
+La stessa verifica con l'immagine nuova mostra come i metadati C2PA siano completamente scomparsi.
+![Verifica immagine passata in GIMP](/assets/images/cr-check_gimp.png)  
 
 ## 🌊 Watermark invisibili nei pixel
 
@@ -145,3 +133,4 @@ Google applica **due livelli di segnalazione**:
 - [Wikipedia: Steganografia](https://en.wikipedia.org/wiki/Steganography)
 - [Wikipedia: Discrete Cosine Transform](https://en.wikipedia.org/wiki/Discrete_cosine_transform)
 - [Article on Wavelet Watermarking](https://www.researchgate.net/publication/24346540_Wavelet-based_digital_image_watermarking)
+
