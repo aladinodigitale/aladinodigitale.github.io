@@ -77,55 +77,56 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 
 ### V1 — Prompt vago → il genio **interpreta**
 - **Krea 1**: sorprendente fotorealismo e **velocità** (più varianti in pochi secondi). Il prompt generico lascia ampio spazio d’interpretazione: in alcuni scatti la scena è su un **treno** anziché nel corridoio; i **testi** sui cartelli luminosi restano imprecisi.
+![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-a.png>)
+
+![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png>)
+
+![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png>)
+
 
 - **Gemini (Nano Banana)**: immagini “pulite” ma sempre veramente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
-
-
-**Selezione immagini**  
-
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-a.png>){
-    ':class': 'post-img'
-}
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png>)
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png>)
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png>)
+
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png>)
+
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png>)
+
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png>)
 
 ---
 
 ### V2 — Prompt-contratto → il genio **esegue**
 - **Krea 1**: buona **aderenza** al contratto; **ALADINO** ben leggibile sul portfolio; **bokeh** credibile e integrazione soggetto/sfondo convincente.
+![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png>)
+
+![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png>)
+
+![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-c.png>)
+
 
 - **Gemini**: aderente al contratto con più **varianza** nelle espressioni e negli sfondi; a volte un leggero “**effetto compositing**”.
-
-
-**Selezione immagini**  
-
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png>)
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png>)
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-c.png>)
 ![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-a.png>)
+
 ![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-b.png>)
+
 ![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-c.png>)
 
 ---
 
 ### V3 — Referenza identità → **coerenza** tra generazioni
 Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagine non è particolarmente ben riuscita ma volutamente ritrae una scena differente ed è ottenuta da un altro modello.
+![Reference V3](</assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png>)
 
 - **Krea 1**: la reference può **dominare** il risultato e introdurre **allucinazioni** (es. collana con scritta **ALLADINO**, **Duomo** sullo sfondo con geometrie alterate). Indizio che la pipeline provata **non espone** controllo fine della reference.
+![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png>)
+
+![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png>)
+
 
 - **Gemini**: mantiene **identità e hairstyle** della protagonista in modo coerente, rispettando gli altri vincoli del contratto.
 
-
-**Selezione immagini**  
-
-![Reference V3](</assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png>)
-![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png>)
-![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png>)
 ![Gemini V3](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v3-a.png>)
+
 
 ---
 
@@ -133,32 +134,34 @@ Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagi
 Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita come riferimento per le altre inquadrature.
 
 - **Krea 1**: genera ritratti fotorealistici ma tende a restare su **inquadrature frontali**; non rispetta **angoli/perspective** richiesti. In un caso, l’underlayer dell’outfit appare **mancante** (maglietta/camicia assente sotto il blazer).
+![Krea V4](</assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png>)
 
 - **Gemini**: produce le **4 inquadrature** richieste (frontale, 3/4, profilo, low-angle) con coerenza di **outfit**, **mani** e **espressioni**.
 
-
-**Selezione immagini**  
-
-![Krea V4](</assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png>)
 ![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-a.png>)
+
 ![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-b.png>)
+
 ![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-c.png>)
+
 ![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png>)
+
 
 ---
 
 ### V5 — Editing mirato → **chirurgia** sull’oggetto
 - **Krea 1**: spesso **aggiunge** la **tote bag** senza **rimuovere** il portfolio → modifica **non** localizzata.
+![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png>)
+
+![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png>)
+
+![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-c.png>)
+
 
 - **Gemini**: esegue l’editing in modo **minimale e preciso**: sostituisce il portfolio con la tote bag, mantenendo tutto il resto invariato.
 
-
-**Selezione immagini**  
-
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png>)
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png>)
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-c.png>)
 ![Gemini V5](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v5-a.png>)
+
 
 ---
 
