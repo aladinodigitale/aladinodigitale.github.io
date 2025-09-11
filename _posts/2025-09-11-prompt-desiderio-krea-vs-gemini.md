@@ -12,6 +12,10 @@ description: "Desiderio vago → il genio interpreta. Desiderio-contratto → il
 ## Perché questo post
 Quando si parla di generazione di immagini, la qualità del risultato dipende tanto dal modello utilizzato quanto da **come formuli il prompt**. Ho messo a confronto **Krea 1** e **Gemini 2.5 Flash Image** su una sequenza di prompt progressivamente più “rigorosi”, mantenendo lo **stesso scenario**. L’obiettivo è mostrare **cosa cambia** tra un desiderio vago e un vero **contratto operativo**.
 
+Ho scelto di testare Krea per le promesse di immagini fotorealistiche; sul sito ufficiale si legge: *Most AI models suffer from soft textures, excessive contrast, and produce boring compositions or styles. Krea 1 ensures highly realistic, crisp textures, a wide variety of styles, and deep artistic knowledge – making AI images not look AI anymore.*
+
+Gemini Nano Banana è semplicemente l'ultimo modello di generazione ed editing di immagini di Google di cui tutta internet parla da alcune settimane ;-)
+
 > Nota lingua: al momento del test, **Krea** ha risposto meglio in **inglese**, quindi i prompt sono in inglese.
 
 ## Metodo
@@ -227,7 +231,7 @@ Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita com
 ---
 
 ## Template riusabile: **Prompt = Contratto**
-In questo articolo abbiamo presentato una proposta di prompt strutturato. Ad onor del vero, la documentazione delle API di Gemini pubblicata da Google copre molteplici aspetti, tra i quali si le [best practice per la scrittura dei prompt] (https://ai.google.dev/gemini-api/docs/image-generation?hl=it#template_10) (comunque sempre di tipo discorsivo).
+In questo articolo abbiamo presentato una proposta di prompt strutturato. Ad onor del vero, la documentazione delle API di Gemini pubblicata da Google copre molteplici aspetti, tra i quali le [best practice per la scrittura dei prompt](https://ai.google.dev/gemini-api/docs/image-generation?hl=it#template_10) (comunque sempre di tipo discorsivo).
 ```text
 [INTENT] = output e realismo (editoriale, illustrativo, ecc.)
 [SUBJECT] = identità, età, tratti, outfit, segni distintivi
@@ -241,7 +245,6 @@ In questo articolo abbiamo presentato una proposta di prompt strutturato. Ad ono
 ```
 
 ### Come replicare
-1) Copia i prompt qui sopra e ripeti **V1→V5** su ogni modello.  
-2) Per **V3/V4** allega sempre la **stessa referenza**.  
-3) Per **V5** usa **Edit/Image-to-Image** sulla migliore immagine della serie.
+Puoi copiare e utilizzare i prompt qui sopra direttamente online. Per Gemini, usa [gemini.google.com](https://gemini.google.com/), selezionando "Immagine" (se non ottieni l'immagine, prova a chiedere a Gemini di crearti un'immagine per il prompt che segue); alternativamente, puoi usare [Google AI Studio](https://aistudio.google.com/), scegliendo "Try Nano Banana".
+Krea v1 invece è il primo dei modelli attualmente disponibili sulla [pagina di generazione immagini di krea.ai](https://www.krea.ai/image).
 
