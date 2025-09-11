@@ -5,8 +5,9 @@ tags: [prompt engineering, image generation, Gemini, Krea]
 description: "Desiderio vago → il genio interpreta. Desiderio-contratto → il genio esegue. Stesso scenario, 5 versioni di prompt, due modelli: cosa cambia davvero."
 ---
 
-> **Metafora della lampada** — *Desiderio vago → il genio interpreta. Desiderio-contratto → il genio esegue.*  
-> In questo articolo non c’è un “vincitore”: osserviamo come **Krea 1** e **Gemini 2.5 Flash Image (Nano Banana)** rispondono a desideri formulati in modo diverso.
+> **Metafora della lampada** — Se il desiderio è espresso in modo vago, il genio interpreta. Al contrario, se il desiderio è formulato come un contratto, il genio semplicemente esegue.
+> 
+> In questo articolo non c’è un modello di generazione delle immagini “vincitore”: osserviamo come **Krea 1** e **Gemini 2.5 Flash Image (Nano Banana)** rispondono a desideri formulati in modo diverso.
 
 ## Perché questo post
 Quando si parla di generazione di immagini, la qualità del risultato dipende tanto dal modello utilizzato quanto da **come formuli il prompt**. Ho messo a confronto **Krea 1** e **Gemini 2.5 Flash Image** su una sequenza di prompt progressivamente più “rigorosi”, mantenendo lo **stesso scenario**. L’obiettivo è mostrare **cosa cambia** tra un desiderio vago e un vero **contratto operativo**.
@@ -140,17 +141,25 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 
 ### V3 — Referenza identità → **coerenza** tra generazioni
 Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagine non è particolarmente ben riuscita ma volutamente ritrae una scena differente ed di proposito è ottenuta da un altro modello.
-![Reference V3](</assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png" alt="Reference image ChatGPT" />
+</a>
 
 - **Krea 1**: la reference può dominare il risultato e introdurre **allucinazioni** (es. scritta **ALLADINO** al collo della donna, **Duomo** sullo sfondo con caratteristiche alterate). Si capisce come Krea, basato su Flux, non abbia le funzionalità di editing avanzato di Flux Kontext.
-![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png" alt="Krea - Prompt V3 - es 1" />
+</a>
 
-![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png" alt="Krea - Prompt V3 - es 2" />
+</a>
 
 
 - **Gemini**: mantiene **identità e hairstyle** della protagonista in modo coerente, rispettando gli altri vincoli del contratto.
 
-![Gemini V3](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v3-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v3-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v3-a.png" alt="Gemini - Prompt V3 - es 1" />
+</a>
 
 
 ---
@@ -159,33 +168,51 @@ Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagi
 Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita come riferimento per le altre inquadrature.
 
 - **Krea 1**: genera ritratti fotorealistici ma tende a restare su **inquadrature frontali**; non rispetta **angoli/perspective** richiesti. In un caso, parte dell’outfit appare mancante (maglietta/camicia assente sotto il blazer).
-![Krea V4](</assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png" alt="Krea - Prompt V4 - es 1" />
+</a>
 
 - **Gemini**: genera egregiamente le **4 inquadrature** richieste (frontale, 3/4, profilo, low-angle); si tratta di uno dei punti di forza del modello. Impressionante lavoro su abbigliamento, movimento delle braccia, espressioni del viso, etc.
 
-![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-a.png" alt="Gemini - Prompt V4 - es 1" />
+</a>
 
-![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-b.png" alt="Gemini - Prompt V4 - es 2" />
+</a>
 
-![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-c.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-c.png" alt="Gemini - Prompt V4 - es 3" />
+</a>
 
-![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png" alt="Gemini - Prompt V4 - es 4" />
+</a>
 
 
 ---
 
 ### V5 — Editing mirato → **chirurgia** sull’oggetto
 - **Krea 1**: di nuovo, come ci si aspettava, Krea continua a generare immagini molto belle, ma non riesce ad effettuare la modifica richiesta. In tre casi su quattro viene aggiunta una borsa, senza rimuovere il portfolio.
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png" alt="Krea - Prompt V5 - es 1" />
+</a>
 
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png" alt="Krea - Prompt V5 - es 2" />
+</a>
 
-![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-c.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v5-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v5-c.png" alt="Krea - Prompt V5 - es 3" />
+</a>
 
 
 - **Gemini**: esegue l’editing in modo **minimale e preciso**: sostituisce il portfolio con la tote bag, mantenendo tutto il resto invariato.
 
-![Gemini V5](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v5-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v5-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v5-a.png" alt="Gemini - Prompt V5 - es 1" />
+</a>
 
 
 ---
