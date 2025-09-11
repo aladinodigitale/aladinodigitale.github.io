@@ -1,7 +1,6 @@
 ---
 title: "Il desiderio perfetto: come il prompt cambia tutto (Krea 1 vs Gemini 2.5 Flash Image “Nano Banana”)"
 date: 2025-09-11 10:00:00 +0200
-categories: [AI Art, Prompting]
 tags: [prompt engineering, image generation, Gemini, Krea]
 description: "Desiderio vago → il genio interpreta. Desiderio-contratto → il genio esegue. Stesso scenario, 5 versioni di prompt, due modelli: cosa cambia davvero."
 ---
@@ -91,13 +90,21 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 
 
 - **Gemini (Nano Banana)**: immagini sostanzialmente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
-![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png" alt="Gemini - Prompt V2 - es 1" />
+</a>
 
-![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png" alt="Gemini - Prompt V2 - es 2" />
+</a>
 
-![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png" alt="Gemini - Prompt V2 - es 3" />
+</a>
 
-![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png>)
+<a href="</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" alt="Gemini - Prompt V2 - es 4" />
+</a>
 
 ---
 
