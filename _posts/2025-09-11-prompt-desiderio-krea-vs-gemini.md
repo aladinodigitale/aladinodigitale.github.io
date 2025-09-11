@@ -77,11 +77,17 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 
 ### V1 — Prompt vago → il genio **interpreta**
 - **Krea 1**: sorprendente fotorealismo e **velocità** (più varianti in pochi secondi). Il prompt generico lascia ampio spazio d’interpretazione: in alcuni scatti la scena è su un **treno** anziché nel corridoio; i **testi** sui cartelli luminosi restano imprecisi.
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v1-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v1-a.png" alt="Krea - Prompt V1 - es 1" />
+</a>
 
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png" alt="Krea - Prompt V1 - es 2" />
+</a>
 
-![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png>)
+<a href="</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png" alt="Krea - Prompt V1 - es 3" />
+</a>
 
 
 - **Gemini (Nano Banana)**: immagini sostanzialmente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
@@ -169,13 +175,13 @@ Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita com
 - **Desiderio vago** → i modelli “riempiono i vuoti”: Krea tende al **fotorealismo** rapido; Gemini a un **look cinematico** coerente.  
 - **Desiderio-contratto** → entrambi migliorano; **Gemini** mostra vantaggi su **serie coerenti** ed **edit puntuali**; **Krea** brilla per **impatto fotorealista** e velocità.  
 - **Reference & identity** → **Gemini** offre più controllo multi-immagine; **Krea** può sovrainiettare elementi della referenza.  
-- **Testo & mani** restano “zone difficili”: specificare **vincoli** (ALL CAPS, spelling esatto, mani visibili) aiuta.
 
 > Sintesi: **progetta il desiderio**. Se vuoi *variazioni creative e fotorealismo veloce*, Krea è una bella lampada. Se vuoi *serie coerenti ed edit chirurgici*, Gemini è un genio affidabile.
 
 ---
 
 ## Template riusabile: **Prompt = Contratto**
+In questo articolo abbiamo presentato una proposta di prompt strutturato. Ad onor del vero, la documentazione delle API di Gemini pubblicata da Google copre molteplici aspetti, tra i quali si le [best practice per la scrittura dei prompt] (https://ai.google.dev/gemini-api/docs/image-generation?hl=it#template_10) (comunque sempre di tipo discorsivo).
 ```text
 [INTENT] = output e realismo (editoriale, illustrativo, ecc.)
 [SUBJECT] = identità, età, tratti, outfit, segni distintivi
