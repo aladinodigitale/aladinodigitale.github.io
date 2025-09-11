@@ -10,7 +10,7 @@ description: "Desiderio vago → il genio interpreta. Desiderio-contratto → il
 > In questo articolo non c’è un “vincitore”: osserviamo come **Krea 1** e **Gemini 2.5 Flash Image (Nano Banana)** rispondono a desideri formulati in modo diverso.
 
 ## Perché questo post
-Nei generatori di immagini, la qualità del risultato dipende in gran parte da **come formuli il prompt**. Ho messo a confronto **Krea 1** e **Gemini 2.5 Flash Image** su una sequenza di prompt progressivamente più “rigorosi”, mantenendo lo **stesso scenario**. L’obiettivo è mostrare **cosa cambia** tra un desiderio vago e un vero **contratto operativo**.
+Quando si parla di generazione di immagini, la qualità del risultato dipende tanto dal modello utilizzato quanto da **come formuli il prompt**. Ho messo a confronto **Krea 1** e **Gemini 2.5 Flash Image** su una sequenza di prompt progressivamente più “rigorosi”, mantenendo lo **stesso scenario**. L’obiettivo è mostrare **cosa cambia** tra un desiderio vago e un vero **contratto operativo**.
 
 > Nota lingua: al momento del test, **Krea** ha risposto meglio in **inglese**, quindi i prompt sono in inglese.
 
@@ -84,7 +84,7 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 ![Krea V1](</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png>)
 
 
-- **Gemini (Nano Banana)**: immagini “pulite” ma sempre veramente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
+- **Gemini (Nano Banana)**: immagini sostanzialmente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png>)
 
 ![Gemini V1](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png>)
@@ -96,7 +96,7 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 ---
 
 ### V2 — Prompt-contratto → il genio **esegue**
-- **Krea 1**: buona **aderenza** al contratto; **ALADINO** ben leggibile sul portfolio; **bokeh** credibile e integrazione soggetto/sfondo convincente.
+- **Krea 1**: buona aderenza al contratto; **ALADINO** ben leggibile sul portfolio; bokeh credibile e integrazione soggetto/sfondo convincente.
 ![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png>)
 
 ![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png>)
@@ -114,10 +114,10 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
 ---
 
 ### V3 — Referenza identità → **coerenza** tra generazioni
-Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagine non è particolarmente ben riuscita ma volutamente ritrae una scena differente ed è ottenuta da un altro modello.
+Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagine non è particolarmente ben riuscita ma volutamente ritrae una scena differente ed di proposito è ottenuta da un altro modello.
 ![Reference V3](</assets/images/2025-09-prompt-krea-gemini/chatgpt-ref-v3.png>)
 
-- **Krea 1**: la reference può **dominare** il risultato e introdurre **allucinazioni** (es. collana con scritta **ALLADINO**, **Duomo** sullo sfondo con geometrie alterate). Indizio che la pipeline provata **non espone** controllo fine della reference.
+- **Krea 1**: la reference può dominare il risultato e introdurre **allucinazioni** (es. scritta **ALLADINO** al collo della donna, **Duomo** sullo sfondo con caratteristiche alterate). Si capisce come Krea, basato su Flux, non abbia le funzionalità di editing avanzato di Flux Kontext.
 ![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-a.png>)
 
 ![Krea V3](</assets/images/2025-09-prompt-krea-gemini/krea-v3-b.png>)
@@ -133,10 +133,10 @@ Ho generato un'immagine di riferimento (reference) utilizzando ChatGPT; l'immagi
 ### V4 — Serie a 4 inquadrature → **regia** e **pose**
 Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita come riferimento per le altre inquadrature.
 
-- **Krea 1**: genera ritratti fotorealistici ma tende a restare su **inquadrature frontali**; non rispetta **angoli/perspective** richiesti. In un caso, l’underlayer dell’outfit appare **mancante** (maglietta/camicia assente sotto il blazer).
+- **Krea 1**: genera ritratti fotorealistici ma tende a restare su **inquadrature frontali**; non rispetta **angoli/perspective** richiesti. In un caso, parte dell’outfit appare mancante (maglietta/camicia assente sotto il blazer).
 ![Krea V4](</assets/images/2025-09-prompt-krea-gemini/krea-v4-a.png>)
 
-- **Gemini**: produce le **4 inquadrature** richieste (frontale, 3/4, profilo, low-angle) con coerenza di **outfit**, **mani** e **espressioni**.
+- **Gemini**: genera egregiamente le **4 inquadrature** richieste (frontale, 3/4, profilo, low-angle); si tratta di uno dei punti di forza del modello. Impressionante lavoro su abbigliamento, movimento delle braccia, espressioni del viso, etc.
 
 ![Gemini V4](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-a.png>)
 
@@ -150,7 +150,7 @@ Ho selezionato la prima delle immagini generate da Krea in V2 e l'ho fornita com
 ---
 
 ### V5 — Editing mirato → **chirurgia** sull’oggetto
-- **Krea 1**: spesso **aggiunge** la **tote bag** senza **rimuovere** il portfolio → modifica **non** localizzata.
+- **Krea 1**: di nuovo, come ci si aspettava, Krea continua a generare immagini molto belle, ma non riesce ad effettuare la modifica richiesta. In tre casi su quattro viene aggiunta una borsa, senza rimuovere il portfolio.
 ![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-a.png>)
 
 ![Krea V5](</assets/images/2025-09-prompt-krea-gemini/krea-v5-b.png>)
