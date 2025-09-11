@@ -84,45 +84,57 @@ Preserve the same protagonist, framing, lighting, palette, depth of field, and e
   <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v1-b.png" alt="Krea - Prompt V1 - es 2" />
 </a>
 
-<a href="</assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png" target="_blank">
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png" target="_blank">
   <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v1-c.png" alt="Krea - Prompt V1 - es 3" />
 </a>
 
 
 - **Gemini (Nano Banana)**: immagini sostanzialmente fotorealistiche; stile a tratti lievemente **cinematic/punk** . La generazione è **una alla volta**; talvolta compaiono elementi poco plausibili (es. una panchina in posizione improbabile): effetto collaterale del prompt generico.
 <a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png" target="_blank">
-  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png" alt="Gemini - Prompt V2 - es 1" />
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-a.png" alt="Gemini - Prompt V1 - es 1" />
 </a>
 
 <a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png" target="_blank">
-  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png" alt="Gemini - Prompt V2 - es 2" />
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-b.png" alt="Gemini - Prompt V1 - es 2" />
 </a>
 
 <a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png" target="_blank">
-  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png" alt="Gemini - Prompt V2 - es 3" />
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-c.png" alt="Gemini - Prompt V1 - es 3" />
 </a>
 
-<a href="</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" target="_blank">
-  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" alt="Gemini - Prompt V2 - es 4" />
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v1-d.png" alt="Gemini - Prompt V1 - es 4" />
 </a>
 
 ---
 
 ### V2 — Prompt-contratto → il genio **esegue**
 - **Krea 1**: buona aderenza al contratto; **ALADINO** ben leggibile sul portfolio; bokeh credibile e integrazione soggetto/sfondo convincente.
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v2-a.png" alt="Krea - Prompt V2 - es 1" />
+</a>
 
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v2-b.png" alt="Krea - Prompt V2 - es 2" />
+</a>
 
-![Krea V2](</assets/images/2025-09-prompt-krea-gemini/krea-v2-c.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/krea-v2-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/krea-v2-c.png" alt="Krea - Prompt V2 - es 3" />
+</a>
 
 
 - **Gemini**: aderente al contratto con più **varianza** nelle espressioni e negli sfondi; a volte un leggero “**effetto compositing**”.
-![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-a.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-a.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-a.png" alt="Gemini - Prompt V2 - es 1" />
+</a>
 
-![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-b.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-b.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-b.png" alt="Gemini - Prompt V2 - es 2" />
+</a>
 
-![Gemini V2](</assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-c.png>)
+<a href="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-c.png" target="_blank">
+  <img src="/assets/images/2025-09-prompt-krea-gemini/gemini-nb-v2-c.png" alt="Gemini - Prompt V2 - es 3" />
+</a>
 
 ---
 
