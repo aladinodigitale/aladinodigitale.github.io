@@ -1,8 +1,14 @@
 ---
-title: "Approfondimento su SynthID: come funziona il watermark invisibile di Google DeepMind"
+title: "Approfondimento su SynthID"
 date: 2025-08-07
 categories: [AI, watermarking, SynthID]
+excerpt: "Scopriamo come funziona il watermark invisibile di Google DeepMind"
 tags: [SynthID, AI, watermarking, DeepMind, Google]
+author: alessio
+classes: wide
+header:
+  overlay_image: /assets/images/google-deepmind-butterflies.webp
+  overlay_filter: 0.8
 ---
 SynthID (sviluppato da Google DeepMind) è un sistema di watermarking invisibile basato su deep learning pensato per contenuti generati da AI.
 
