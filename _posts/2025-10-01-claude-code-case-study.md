@@ -7,7 +7,7 @@ author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/claude-code/esempio-claude-code-10.png
-  overlay_filter: 0.5
+  overlay_filter: 0.8
 ---
 
 ## Introduzione: cos’è Claude Code e perché è interessante

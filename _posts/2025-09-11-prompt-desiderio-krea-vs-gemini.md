@@ -3,6 +3,11 @@ title: "Il desiderio perfetto: come il prompt cambia tutto (Krea 1 vs Gemini 2.5
 date: 2025-09-11 10:00:00 +0200
 tags: [prompt engineering, image generation, Gemini, Krea]
 description: "Desiderio vago → il genio interpreta. Desiderio-contratto → il genio esegue. Stesso scenario, 5 versioni di prompt, due modelli: cosa cambia davvero."
+author: alessio
+classes: wide
+header:
+  overlay_image: /assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png
+  overlay_filter: 0.8
 ---
 
 > **Metafora della lampada** — Se il desiderio è espresso in modo vago, il genio interpreta. Al contrario, se il desiderio è formulato come un contratto, il genio semplicemente esegue.
