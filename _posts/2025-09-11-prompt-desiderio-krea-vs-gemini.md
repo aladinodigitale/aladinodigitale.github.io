@@ -7,7 +7,7 @@ author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/2025-09-prompt-krea-gemini/gemini-nb-v4-d.png
-  overlay_filter: 0.8
+  overlay_filter: 0.5
 ---
 
 > **Metafora della lampada** — Se il desiderio è espresso in modo vago, il genio interpreta. Al contrario, se il desiderio è formulato come un contratto, il genio semplicemente esegue.

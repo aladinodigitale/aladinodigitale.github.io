@@ -8,7 +8,7 @@ author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/google-deepmind-butterflies.webp
-  overlay_filter: 0.8
+  overlay_filter: 0.6
 ---
 SynthID (sviluppato da Google DeepMind) è un sistema di watermarking invisibile basato su deep learning pensato per contenuti generati da AI.
 
