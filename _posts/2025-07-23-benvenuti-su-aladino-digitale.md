@@ -5,6 +5,9 @@ layout: single
 author_profile: false
 read_time: true
 excerpt: "Perché Aladino Digitale? Perché oggi esprimere desideri attraverso i prompt è un'arte, quasi magica..."
+header:
+  overlay_image: /assets/images/background.jpg
+  overlay_filter: 0.1
 ---
 
 {% include figure image_path="/assets/images/aladino-genio-ai.png"
