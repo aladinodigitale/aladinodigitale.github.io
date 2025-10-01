@@ -3,6 +3,12 @@ title: "Come riconoscere un'immagine generata da AI"
 date: 2025-08-06
 categories: [AI, watermarking, C2PA]
 tags: [SynthID, AI, watermarking, C2PA, chatgpt]
+author: alessio
+classes: wide
+header:
+  overlay_image: /assets/images/chatgpt-woman-green-gimp.jpg
+  overlay_filter: 0.8
+---
 ---
 Con la diffusione esplosiva delle immagini generate da intelligenze artificiali come DALL·E, Midjourney, Firefly o Imagen, diventa sempre più importante **capire se un contenuto visivo è autentico o sintetico**.  
 Non per fare i detective digitali… ma per **trasparenza, responsabilità e sicurezza**.

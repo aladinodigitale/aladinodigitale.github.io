@@ -1,6 +1,8 @@
 ---
 title: "Segmentazione conversazionale con Gemini 2.5: cosa vede davvero l’IA?"
 date: 2025-07-24
+author: alessio
+classes: wide
 ---
 
 > L’intelligenza artificiale non si limita più a riconoscere oggetti generici come “persona” o “auto”. Con [Gemini 2.5](https://developers.googleblog.com/en/conversational-image-segmentation-gemini-2-5/), possiamo descrivere scenari complessi in linguaggio naturale e ottenere risposte visive su misura. Ecco due esempi pratici di come può essere utile nella vita reale.
