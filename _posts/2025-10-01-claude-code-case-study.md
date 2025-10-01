@@ -5,12 +5,12 @@ excerpt: "Case study reale: dall’analisi automatica alla validazione degli inp
 tags: [AI Coding, Claude, Open Source, DevTools, ONNX]
 classes: wide
 header:
-  overlay_image: /assets/images/claude-code/esempio-claude-code-10.png
-  overlay_filter: 0.2
+  overlay_image: /assets/images/claude-code/esempio-claude-code-06.png
+  overlay_filter: 0.1
 ---
 
 ## Introduzione: cos’è Claude Code e perché è interessante
-[Claude Code](https://www.anthropic.com/claude/code) è un ambiente pensato per **scrivere e migliorare codice insieme a un’IA**.  
+[Claude Code](https://www.claude.com/product/claude-code) è un ambiente pensato per **scrivere e migliorare codice insieme a un’IA**.  
 Non si limita a generare funzioni o script: analizza la codebase, propone modifiche, aiuta con refactoring e test, installa dipendenze e può modificare i file in autonomia.
 
 > Nota: online esistono già numerose guide — introduttive e avanzate — su come usare Claude per programmare.  
