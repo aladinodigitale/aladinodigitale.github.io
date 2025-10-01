@@ -3,10 +3,11 @@ title: "Un esempio pratico con Claude Code: migliorare un progetto open source"
 date: 2025-10-01
 excerpt: "Case study reale: dall’analisi automatica alla validazione degli input, con test e documentazione aggiornati, su un piccolo progetto open source."
 tags: [AI Coding, Claude, Open Source, DevTools, ONNX]
+author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/claude-code/esempio-claude-code-06.png
-  overlay_filter: 0.1
+  overlay_image: /assets/images/claude-code/esempio-claude-code-10.png
+  overlay_filter: 0.5
 ---
 
 ## Introduzione: cos’è Claude Code e perché è interessante

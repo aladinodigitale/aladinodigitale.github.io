@@ -1,0 +1,15 @@
+alessio:
+  name: "Alessio Soldano"
+  bio: >
+    Software Engineer e Manager con lunga esperienza in middleware open source,
+    oggi esplora applicazione pratiche ed impatto della AI generativa e degli
+    strumenti di coding assistito.
+  avatar: "/assets/images/authors/alessio.jpg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/asoldano"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/alessiosoldano"
+
