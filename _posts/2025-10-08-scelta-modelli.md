@@ -7,7 +7,7 @@ author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/hf-models.png
-  overlay_filter: 0.5
+  overlay_filter: 0.7
 ---
 
 # 🧭 Come orientarsi tra i modelli AI da usare in locale
