@@ -6,8 +6,8 @@ tags: [AI locale, LLM, Stable Diffusion, quantizzazione, GGUF, ONNX, MoE]
 author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/background.jpg
-  overlay_filter: 0.8
+  overlay_image: /assets/images/hf-models.png
+  overlay_filter: 0.5
 ---
 
 # 🧭 Come orientarsi tra i modelli AI da usare in locale
@@ -172,14 +172,31 @@ Esempio per Stable Diffusion:
 
 ---
 
-## 7. Mixture of Experts (MoE) e memoria di contesto
+## 7. Mixture of Experts (MoE): più cervelli, meno memoria?
 
-### Mixture of Experts
-I modelli *Mixture of Experts* (MoE), come **Mixtral** o **DeepSeek-Coder**, non usano tutti i loro “esperti” in ogni token.  
-Attivano solo 2 o 3 blocchi su 8, riducendo così l’uso effettivo di memoria senza sacrificare la capacità di ragionamento.
+I modelli **Mixture of Experts (MoE)** usano un principio semplice ma potente:  
+invece di avere *un’unica rete neurale densa* che elabora tutto, ne hanno **più “esperti” specializzati** (sub-reti), e a ogni token solo alcuni di essi vengono attivati.
 
-> 📈 In pratica, un Mixtral 8×7B offre prestazioni vicine a un 60-70B, ma consuma memoria come un 12-16 GB.  
-> Il carico però può variare leggermente durante l’inferenza, rendendo la latenza meno prevedibile.
+In pratica:
+- Il modello possiede **molti più parametri complessivi**, ma non li usa tutti contemporaneamente.  
+- Un **meccanismo di routing** decide quali esperti attivare per ogni token, in base al contesto.  
+- Questo permette di combinare **capacità di ragionamento elevate** con **costi di memoria ridotti** in fase di inferenza.
+
+> 💡 *Esempio intuitivo:* immagina una squadra di specialisti: un linguista, un programmatore, un matematico.  
+> Per una frase tecnica, il router chiama il programmatore e il linguista, lasciando “a riposo” gli altri.  
+> Il modello resta veloce, ma conserva la conoscenza complessiva dell’intera squadra.
+
+### ⚙️ Cosa comporta dal punto di vista tecnico
+
+- **Parametri totali:** possono essere anche 100–200 miliardi, ma durante l’inferenza ne vengono usati solo 10–20%.  
+- **Memoria richiesta:** dipende dagli esperti attivi, non da quelli totali → di solito inferiore rispetto a un modello *dense* equivalente.  
+- **Routing:** può essere *statico* (stesso gruppo di esperti per ogni token) o *dinamico* (scelti in base al contesto, come nei modelli moderni).
+
+### 📊 Prestazioni e compromessi
+
+- Un MoE **non è sempre più veloce**: il routing introduce un piccolo overhead computazionale.  
+- Tuttavia, a parità di VRAM disponibile, **può fornire risultati migliori** rispetto a un modello denso di pari dimensioni “attiva”.  
+- In termini di qualità, un buon MoE da 20B con 2 esperti attivi può avvicinarsi a un dense da 70B, ma **non lo eguaglia sempre**: la performance dipende da quanto bene gli esperti sono addestrati e bilanciati.
 
 ---
 
