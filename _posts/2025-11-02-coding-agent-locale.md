@@ -1,13 +1,13 @@
 ---
 title: "Coding agent in locale: esperimenti con Claude Code Router e LM Studio"
-date: 2025-10-22
+date: 2025-11-02
 excerpt: "Un esperimento pratico: far lavorare un coding agent interamente in locale e scoprire, tra cache, memoria e tempi di risposta, quanto sia davvero impegnativo."
 tags: [AI locale, LLM, aiopenweight, Strix Halo, generativeai]
 author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/coding-agent-locale/overlay-image.jpg
-  overlay_filter: 0.5
+  overlay_filter: 0.4
 ---
 
 Durante la settimana appena conclusa ho cercato di capire fin dove si possa spingere l’idea di un *coding agent* — ma non nel cloud, bensì **in locale**, usando modelli openweight e il mio hardware.
