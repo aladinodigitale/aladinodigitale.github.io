@@ -6,8 +6,8 @@ tags: [AI locale, LLM, aiopenweight, Strix Halo, generativeai]
 author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-running-cache-reuse.png
-  overlay_filter: 0.6
+  overlay_image: /assets/images/coding-agent-locale/overlay-image.jpg
+  overlay_filter: 0.5
 ---
 
 Durante la settimana appena conclusa ho cercato di capire fin dove si possa spingere l’idea di un *coding agent* — ma non nel cloud, bensì **in locale**, usando modelli openweight e il mio hardware.
@@ -150,7 +150,7 @@ Per massimizzare l'utilizzo della cache, si utilizzano *KV cache manager* che ut
 LM Studio si basa internalmente sulla libreria llama.cpp che mi risulta disporre di un meccanismo di KV cache, anche se non particolarmente avanzato. Sequenze di prompt profondamente differenti o semplicemente di lunghezza molto differente, invalidano facilmente la cache, portando a ricalcoli per ricostruire la rappresentazione interna del contesto, rieseguendo l'attenzione per tutti i token dei prompt.
 Su 64 k token di input, parliamo di diverse decine di secondi di lavoro aggiuntivo sul mio hardware.
 
-Nel mio caso di test si verificava esattamente questo fenomeno, presumibilmente in relazione alla sequenza con i vari tipi differenti di prompt vengono generati ed inviati dal coding agent.
+Nel mio caso di test si verificava esattamente questo fenomeno, presumibilmente in relazione alla sequenza con cui i vari tipi differenti di prompt vengono generati ed inviati dal coding agent.
 Non ho fatto vera e propria analisi del traffico HTTP tra agente e modello, ma è abbastanza evidente che il router inoltra richieste tutt'altro che omogenee: ci sono chiamate che coinvolgono interi file, ragionamenti multi-step, sintesi di piani d’azione — e altre molto più brevi, che servono solo per gestire il flusso, interrogare lo stato, o verificare la disponibilità di tool.
 Sono proprio queste micro-richieste, alternate alle operazioni lunghe, che più frequentemente portano all’invalidazione della cache.
 
@@ -237,7 +237,7 @@ L’agente, però, non riusciva ancora a completare correttamente il primo task 
 
 Ho provato a sostituire il modello con **Qwen 3**.
 Il primo tentativo con `Qwen3-Coder-30B-AB3-Instruct` non ha funzionato come speravo: ottimo sul codice, ma senza capacità reasoning sufficiente per la fase *think*.
-Sono quindi passato a `[Qwen3-30B-A3B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507)`, che migliora il precedente in particolare aggiungengo le capacità di reasoning.
+Sono quindi passato a [`Qwen3-30B-A3B-Instruct-2507`](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507), che migliora il precedente in particolare aggiungengo le capacità di reasoning.
 
 La configurazione era la stessa: due istanze LM Studio, stesso schema di router.
 Le risposte migliorano, ma il ciclo completo (feature → test → doc) ancora non si chiudeva correttamente.
@@ -286,10 +286,10 @@ Con questa configurazione i tempi di reasoning erano più stabili, il contesto m
 {% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-1-analysis.png" alt="gpt-oss 120B - analysis" caption="Analizziamo il progetto con il modello da 120B" %}
 {% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-2-fix.png" alt="gpt-oss 120B - 2" caption="Inizio implementazione rate limiting feature..." %}
 {% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-3-fix.png" alt="gpt-oss 120B - 3" caption="... completiamo l'implementazione." %}
-{% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-4-fix.png" alt="gpt-oss 120B - 4" caption="Preparazione test della nuova feature" %}
-{% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-5-fix.png" alt="gpt-oss 120B - 5" caption="Test eseguiti correttamente." %}
+{% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-4-test.png" alt="gpt-oss 120B - 4" caption="Preparazione test della nuova feature" %}
+{% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-5-test.png" alt="gpt-oss 120B - 5" caption="Test eseguiti correttamente." %}
 
-Il tempo medio per richiesta si è assestato intorno ai **30 secondi**, con variazioni in base al tipo di operazione e al numero di file coinvolti.
+Il tempo medio per richiesta utente si è assestato intorno ai **30 secondi**, con variazioni in base al tipo di operazione e al numero di file coinvolti.
 Un risultato tutt’altro che “snello”, ma perfettamente accettabile considerando che tutto girava su una singola macchina.
 
 {% include figure image_path="/assets/images/coding-agent-locale/coding-agent-locale-gpt-oss-120b-config-memory.png" alt="gpt-oss 20B + 120B - config" caption="Configurazione definitiva e memoria utilizzata." %}
@@ -318,7 +318,7 @@ Un agente deve pianificare, leggere e aggiornare continuamente il contesto, quin
 
 ## 7. Conclusione
 
-Mi sento di dire che portare un *coding agent* in locale oggi è sostanzialmente possibile, ma richiede hardware generoso, pazienza e un po’ di curiosità tecnica.
+Mi sento di dire che portare un *coding agent* in locale (per singolo utente) oggi è sostanzialmente possibile, ma richiede hardware generoso, pazienza e un po’ di curiosità tecnica.
 Il risultato finale non sostituisce l’esperienza fluida di Claude Code utilizzato attraverso le API, ma permette di capire meglio **cosa succede sotto il cofano**:
 quali risorse servono, come incide il contesto, cosa fa la cache, etc.
 In termini di qualità nel coding, quanto proposto dal `gpt-oss-120b` è a prima vista buono, ma mi aspetto che al crescere della complessità del progetto, il divario con i risultati ottenibili utilizzando le API a modelli remoti si percepisca in modo evidente.
