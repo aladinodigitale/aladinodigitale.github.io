@@ -7,14 +7,14 @@ author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/cc-dataset-lora/overlay-image.jpg
-  overlay_filter: 0.4
+  overlay_filter: 0.6
 ---
 
 Un tema ricorrente in ambito di intelligenza artificiale generativa applicata alle immagini (e video) è quello della creazione di personaggi consistenti, *consistent characters*, cioè la capacità di un modello AI di rappresentare **lo stesso soggetto** (volto, corporatura, stile, dettagli) in **scatti completamente diversi**, prodotti in momenti, contesti e pose differenti.
 È un tema che sta esplodendo: dai video su YouTube, agli influencer virtuali su Instagram, passando per tool online che permettono di farsi il proprio “avatar AI"... e includendo ricerche e progetti molto più seri attorno al tema della verifica identità, deepfake, contenuti generati per social o advertising.
 
 Su Aladino Digitale già si era toccato l’argomento nel post su **[Giulia che esce dalla lampada](https://aladinodigitale.it/ai/immagine/tutorial/2025/07/28/giulia-ai.html)**.
-In quel caso l’idea era sostanzialmente un gioco: avevamo generato un’immagine con ChatGPT + Gemini Nano Banana + OpenArt, e poi l’avevamo usata per ottenere qualche close-up e un mini-video. Ma lì si trattava semplicemente di sfruttare le funzionalità di modelli _img2img_ come Flux Context (che oggi possiede anche Gemini Nano Banana) esposte da tool quali OpenArt: non c’era un vero “personaggio consistente”. Era una serie di derivazioni della stessa immagine.
+In quel caso l’idea era sostanzialmente un gioco: avevamo generato un’immagine con ChatGPT + Gemini Nano Banana + OpenArt, e poi l’avevamo usata per ottenere qualche close-up e un mini-video. Ma lì si trattava semplicemente di sfruttare le funzionalità di modelli _img2img_ come Flux Context (funzionalità che oggi possiede anche Gemini Nano Banana) esposte da tool quali OpenArt: non c’era un vero “personaggio consistente”. Era una serie di derivazioni della stessa immagine.
 
 Quello che volevo esplorare ora è un passo diverso:
 **partire da una singola foto e costruire un modello in grado di generare ogni possibile nuova immagine di quel soggetto**, in qualunque contesto, come se fosse una vera persona fotografata infinite volte.
@@ -36,7 +36,7 @@ Il concetto è semplice: se voglio creare un personaggio fittizio (per storytell
 * è ripresa con stili e qualità fotografiche differenti.
 
 Oggi le AI sfornano volti realistici a migliaia... ma **mantenere coerenza e consistenza** tra generazioni differenti è un’altra storia.
-Ecco perché sono nati svariati siti online (incluso lo stesso OpenArt) che promettono di generare in modo semplice un consistent character: da poche immagini costruiscono un profilo consistente, sfruttando in qualche forma un fine-tuning leggero del modello (quasi sempre LoRA).
+Ecco perché sono nati svariati siti online (incluso lo stesso [OpenArt](https://openart.ai/home)) che promettono di generare in modo semplice un consistent character: da poche immagini costruiscono un profilo consistente, sfruttando in qualche forma un fine-tuning leggero del modello (quasi sempre LoRA).
 
 Nel mio caso, volevo capire:
 
@@ -44,7 +44,7 @@ Nel mio caso, volevo capire:
 * cosa cambia rispetto alle soluzioni “one click” online;
 * se è possibile partire davvero da *una sola immagine* e arrivare a un modello funzionante.
 
-Giulia è diventata la “cavia” perfetta.
+_Giulia è diventata la “cavia” perfetta._
 
 ---
 
@@ -69,6 +69,7 @@ Perché al momento:
 * è estremamente forte sul realismo (specie nella versione Krea);
 * regge molto bene l’identità del soggetto;
 * ha modifiche ottimizzate per generazione rapida, queuing, caching, ecc.;
+* è molto apprezzato dalla community e supportato da tanti tool
 * gira relativamente bene sulla [soluzione AMD a mia disposizione](https://aladinodigitale.it/2025/10/22/local-ai.html#la-mia-esperienza-con-amd-ryzen-ai-max-395-128-gb).
 
 ### Perché in locale?
@@ -92,7 +93,7 @@ Partendo dall’immagine di Giulia usata nel vecchio post, ho aperto OpenArt in 
 
 * togliere oggetti;
 * cambiare ambienti;
-* zoom su dettagli;
+* effettuare zoom su dettagli;
 * cambiare posa;
 * aggiungere abiti;
 * ecc.
@@ -100,15 +101,19 @@ Partendo dall’immagine di Giulia usata nel vecchio post, ho aperto OpenArt in 
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart1.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-openart1.jpg" alt="Rimozione oggetti e cambio di ambiente" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart2.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-openart2.jpg" alt="Zoom su dettaglio tatuaggi" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart3.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-openart3.jpg" alt="Cambio ambiente, posa e abbigliamento - cooking" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart4.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-openart4.jpg" alt="Cambio ambiente, posa e abbigliamento - make up" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart5.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-openart5.jpg" alt="Cambio ambiente, posa e abbigliamento - car" />
 </a>
@@ -132,21 +137,25 @@ Qui entra in scena un workflow abbastanza articolato; dopo una breve ricerca in 
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy1.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy1.jpg" alt="Generazione differenti viste del personaggio a figura intera" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy2.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy2.jpg" alt="Generazione close-up e profilo del viso" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy3.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy3.jpg" alt="Cambio abbigliamento e controllo posa" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy4.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy4.jpg" alt="Generazione espressioni" />
 </a>
+
+Nella seconda parte invece si applica upscaling e piccoli miglioramenti assortiti alle immagini precedentemente generate. Vengono inoltre generate le caption con la descrizione delle immagini create.
+
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy5.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy5.jpg" alt="Upscaling e creazione del dataset" />
 </a>
 
-
-Nella seconda parte invece si applica upscaling e piccoli miglioramenti assortiti alle immagini precedentemente generate. Vengono inoltre generate le caption con la descrizione delle immagini create.
 Il risultato è un dataset relativamente strutturato, con viste complementari che aiutano il LoRA a generalizzare.
 
 ### Vantaggi
@@ -168,7 +177,7 @@ Sufficienti per un LoRA di qualità? Forse, da valutare in seguito, di sicuro ab
 ---
 # 4. Addestrare il LoRA con FluxGym: semplice, ma con mille parametri
 
-Per l’addestramento ho usato **(FluxGym)[https://github.com/cocktailpeanut/fluxgym]**, un’interfaccia che permette di:
+Per l’addestramento ho usato **[FluxGym](https://github.com/cocktailpeanut/fluxgym)**, un’interfaccia che permette di:
 
 * definire il nome del LoRA;
 * scegliere il modello base (Flux dev nel mio caso) e la parola chiave/trigger per attivare il LoRA;
@@ -238,7 +247,7 @@ Per semplicità, ho scelto di non focalizzarmi sugli aspetti di "ottimizzazione 
 }
 ```
 
-E' possibile fornire uno o più **sample prompt** da utilizzare a varie epoche per generare immagini con il LoRA corrente, così da valutare i progressi dell'addestramento (ed eventualmente fermarsi ante tempo, previa configurazione di FluxGym per salvare snapshot del LoRA agli stessi step in cui si valutano i sample prompt. In generale, qui il consiglio è di fornire prompt sufficientemente generici da lasciare spazio al modello di "esprimersi" e vedere se e quanto il LoRA sta facendo effetto. Inoltre è bene formulare prompt che descrivano scene che normalmente portino a rappresentare gli elementi che si presume essere distintivi del soggetto per i quale si crea il LoRA (ad esempio ripresa frontale del soggetto , utile per valutare il viso).
+E' possibile fornire uno o più **sample prompt** da utilizzare a varie epoche per generare immagini con il LoRA corrente, così da valutare i progressi dell'addestramento (ed eventualmente fermarsi ante tempo, previa configurazione di FluxGym per salvare snapshot del LoRA agli stessi step in cui si valutano i sample prompt). In generale, qui il consiglio è di fornire prompt sufficientemente generici da lasciare spazio al modello di "esprimersi" e vedere se e quanto il LoRA sta facendo effetto. Inoltre è bene formulare prompt che descrivano scene che normalmente portino a rappresentare gli elementi che si presume essere distintivi del soggetto per i quale si crea il LoRA (ad esempio ripresa frontale del soggetto , utile per valutare il viso).
 
 Dopo diverse ore di computazione, utilizzando oltre 20 GB di memoria video (ma esiste configurazione per eseguire con soli 12GB di VRAM), FluxGym mi produce:
 
@@ -250,6 +259,7 @@ Dopo diverse ore di computazione, utilizzando oltre 20 GB di memoria video (ma e
 <a href="/assets/images/cc-dataset-lora/cc-lora-fluxgym4.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym4.jpg" alt="FluxGym: inizio addestramento" />
 </a>
+<br/>
 <a href="/assets/images/cc-dataset-lora/cc-lora-fluxgym5.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym5.jpg" alt="FluxGym: fine addestramento" />
 </a>
@@ -267,7 +277,8 @@ Il LoRA ottenuto è utilizzabile con qualunque modello della serie Flux. Torno d
   <img src="/assets/images/cc-dataset-lora/cc-lora-comfy1.jpg" alt="ComfyUI: setup LoRA" />
 </a>
 
-Per attivare il LoRA in fase di generazione, aggiungo nel prompt la parola chiave `Giulia1` e gioco con i contesti; per cominciare un semplice prompt del tipo `A 4k photorealistic full body shot of Giulia1, sitting on a bench in a city park`, in 20 step e con il resto delle impostazioni visibili nell'immagine qui sotto, produce un'immagine a tutti gli effetti coerente con quella di partenza: Giulia è rappresentata nell'immagine unicamente grazie al riferimento del nome nel prompt, senza bisogno di specificarne le caratteristiche fisiche / estetiche.
+Per attivare il LoRA in fase di generazione, aggiungo nel prompt la parola chiave `Giulia1` e gioco con i contesti.
+Per cominciare un semplice prompt del tipo `A 4k photorealistic full body shot of Giulia1, sitting on a bench in a city park`, in 20 step e con il resto delle impostazioni visibili nell'immagine qui sotto, produce un'immagine a tutti gli effetti coerente con quella di partenza: Giulia è rappresentata nell'immagine unicamente grazie al riferimento del nome nel prompt, senza bisogno di specificarne le caratteristiche fisiche / estetiche.
 
 <a href="/assets/images/cc-dataset-lora/cc-lora-comfy2.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-lora-comfy2.jpg" alt="ComfyUI: prima immagine di Giulia al parco" />
@@ -315,8 +326,7 @@ Eppure, con:
 * una sola immagine iniziale,
 * ~25 immagini derivate,
 * un training leggero in locale,
-* un modello Flux,
-* e un LoRA rank molto basso,
+* un modello Flux in locale,
 
 sono riuscito a **creare un personaggio consistente**, da zero, completamente offline, e senza censure.
 
