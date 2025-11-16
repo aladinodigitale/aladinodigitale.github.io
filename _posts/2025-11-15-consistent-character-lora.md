@@ -6,7 +6,7 @@ excerpt: "Un esperimento pratico di creazione di un dataset di immagini e addest
 author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/cc-dataset-lora/overlay-image.jpg
+  overlay_image: /assets/images/cc-dataset-lora/cc-lora-comfy2.jpg
   overlay_filter: 0.6
 ---
 
@@ -292,7 +292,7 @@ Noto tuttavia che i tatuaggi alle gambe sembrano scomparsi (avevo esplicitamente
 
 Con il prompt rivisto otteniamo i tatuaggi richiesti. Il LoRA sembra avere effettivamente imparato qualcosa riguardo i tatuaggi di Giulia, le posizioni sulle gambe sono corrette, il colore è giusto, lo stile / pattern tuttavia è simile ma non identico (indice della necessità di migliori e più numerose immagini necessarie nel dataset e probabilmente di una fase di training più estesa e meglio configurata). Inoltre, l'immagine generata presenta tatuaggi non richiesti anche sulle braccia.
 
-Per concludere provo ad utilizzare un prompt molto verboso reperito su una galleria online di immagini AI; la scena descritta è relativamente complessa e ricca di dettagli, ciononostante il risultato è più che buono.
+Per concludere provo ad utilizzare un prompt molto verboso reperito su una galleria online di immagini AI; la scena descritta è relativamente complessa e ricca di dettagli, ciononostante il risultato è sempre più che buono.
 
 <a href="/assets/images/cc-dataset-lora/cc-lora-comfy5.jpg" target="_blank">
   <img src="/assets/images/cc-dataset-lora/cc-lora-comfy5.jpg" alt="ComfyUI: Giulia e a un caffè francese" />
