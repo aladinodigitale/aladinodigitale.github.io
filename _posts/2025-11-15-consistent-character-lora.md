@@ -1,5 +1,5 @@
 ---
-title: "“Consistent character” in locale e con un solo scatto: esperimenti pratici con LoRA, Flux e ComfyUI"
+title: "“Consistent character” in locale e con un solo scatto: LoRA, Flux e ComfyUI"
 date: 2025-11-15
 tags: [AI locale, LoRA, Flux, ComfyUI, training, Strix Halo, consistent character]
 excerpt: "Un esperimento pratico di creazione di un dataset di immagini e addestramento di un LoRA, in locale su AMD Strix Halo."
@@ -99,23 +99,19 @@ Partendo dall’immagine di Giulia usata nel vecchio post, ho aperto OpenArt in 
 * ecc.
 
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart1.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart1.jpg" alt="Rimozione oggetti e cambio di ambiente" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart1.jpg" alt="Rimozione oggetti e cambio di ambiente" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart2.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart2.jpg" alt="Zoom su dettaglio tatuaggi" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart2.jpg" alt="Zoom su dettaglio tatuaggi" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart3.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart3.jpg" alt="Cambio ambiente, posa e abbigliamento - cooking" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart3.jpg" alt="Cambio ambiente, posa e abbigliamento - cooking" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart4.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart4.jpg" alt="Cambio ambiente, posa e abbigliamento - make up" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart4.jpg" alt="Cambio ambiente, posa e abbigliamento - make up" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-openart5.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart5.jpg" alt="Cambio ambiente, posa e abbigliamento - car" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-openart5.jpg" alt="Cambio ambiente, posa e abbigliamento - car" style="margin-bottom:20px;" />
 </a>
 
 Il vantaggio di questo approccio è la rapidità di generazione delle immagini, che sono di norma coerenti e senza particolari allucinazioni (grazie alla bontà di Gemini Nano Banana). Il limite vero, a prescindere da ragionamenti su costi, è chiaramente quello di privacy, policy ed eventuale moderazione.
@@ -135,19 +131,16 @@ Qui entra in scena un workflow abbastanza articolato; dopo una breve ricerca in 
 * cambia l'abbigliamento del soggetto usando capi da immagini di riferimento;
 
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy1.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy1.jpg" alt="Generazione differenti viste del personaggio a figura intera" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy1.jpg" alt="Generazione differenti viste del personaggio a figura intera" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy2.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy2.jpg" alt="Generazione close-up e profilo del viso" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy2.jpg" alt="Generazione close-up e profilo del viso" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy3.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy3.jpg" alt="Cambio abbigliamento e controllo posa" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy3.jpg" alt="Cambio abbigliamento e controllo posa" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy4.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy4.jpg" alt="Generazione espressioni" />
+  <img src="/assets/images/cc-dataset-lora/cc-dataset-gen-comfy4.jpg" alt="Generazione espressioni" style="margin-bottom:20px;" />
 </a>
 
 Nella seconda parte invece si applica upscaling e piccoli miglioramenti assortiti alle immagini precedentemente generate. Vengono inoltre generate le caption con la descrizione delle immagini create.
@@ -257,11 +250,10 @@ Dopo diverse ore di computazione, utilizzando oltre 20 GB di memoria video (ma e
 * caption associate
 
 <a href="/assets/images/cc-dataset-lora/cc-lora-fluxgym4.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym4.jpg" alt="FluxGym: inizio addestramento" />
+  <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym4.jpg" alt="FluxGym: inizio addestramento" style="margin-bottom:20px;" />
 </a>
-<br/>
 <a href="/assets/images/cc-dataset-lora/cc-lora-fluxgym5.jpg" target="_blank">
-  <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym5.jpg" alt="FluxGym: fine addestramento" />
+  <img src="/assets/images/cc-dataset-lora/cc-lora-fluxgym5.jpg" alt="FluxGym: fine addestramento" style="margin-bottom:20px;" />
 </a>
 
 
