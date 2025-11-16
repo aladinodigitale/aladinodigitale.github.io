@@ -200,8 +200,7 @@ FluxGym dispone di diverse decine di parametri di configurazione.
 Per semplicità, ho scelto di non focalizzarmi sugli aspetti di "ottimizzazione scientifica": ho modificato soltanto `--optimizer-type` per evitare un errore iniziale e la durata del training, poi ho lasciato quasi tutto a default.
 
 ```bash
-{
-  accelerate launch   --mixed_precision bf16 --num_cpu_threads_per_process 1
+accelerate launch   --mixed_precision bf16 --num_cpu_threads_per_process 1
   sd-scripts/flux_train_network.py
   --pretrained_model_name_or_path "/home/alessio/dati/fluxgym/models/unet/flux1-dev.sft"
   --clip_l "/home/alessio/dati/fluxgym/models/clip/clip_l.safetensors"
@@ -237,7 +236,6 @@ Per semplicità, ho scelto di non focalizzarmi sugli aspetti di "ottimizzazione 
   --guidance_scale 1
   --loss_type l2
   --mem_eff_attn
-}
 ```
 
 E' possibile fornire uno o più **sample prompt** da utilizzare a varie epoche per generare immagini con il LoRA corrente, così da valutare i progressi dell'addestramento (ed eventualmente fermarsi ante tempo, previa configurazione di FluxGym per salvare snapshot del LoRA agli stessi step in cui si valutano i sample prompt). In generale, qui il consiglio è di fornire prompt sufficientemente generici da lasciare spazio al modello di "esprimersi" e vedere se e quanto il LoRA sta facendo effetto. Inoltre è bene formulare prompt che descrivano scene che normalmente portino a rappresentare gli elementi che si presume essere distintivi del soggetto per i quale si crea il LoRA (ad esempio ripresa frontale del soggetto , utile per valutare il viso).
