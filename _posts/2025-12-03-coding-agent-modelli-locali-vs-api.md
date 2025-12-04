@@ -1,18 +1,18 @@
 ---
 title: "Coding agent: modelli locali vs API"
-date: 2025-11-03
+date: 2025-12-03
 excerpt: "Proviamo Cline e Kilo Code con modelli locali e remoti (via API) e analizziamo i risultati per comprendere cosa cambia davvero."
 tags: [AI locale, LLM, Cline, Kilo Code, aiopenweight, Strix Halo, generativeai]
 author: alessio
 classes: wide
 header:
   overlay_image: /assets/images/coding-agent-modelli-locali-vs-api/kilo-glm46-C.jpg
-  overlay_filter: 0.4
+  overlay_filter: 0.5
 ---
 
 A inizio Novembre mi sono cimentato in alcuni test di sviluppo software attraverso Claude Code integrato (via Claude Code Router) con modelli openweight GPT OSS eseguiti in locale.
 
-Nelle ultime settimane, invece, ho voluto sperimentare due coding agent specificamente concepiti per servirsi di svariati modelli (openweight e commerciali) in locale o in remoto. Nello specifico, ho provato [Kilo Code](https://kilo.ai/) e [Cline](https://cline.bot/); entrambi sono disponibili come estensioni di molti dei principali IDE, tra i quali ho scelto [VS Code](https://code.visualstudio.com/).
+Nelle ultime settimane, invece, ho voluto sperimentare due coding agent specificamente concepiti per servirsi di svariati modelli (openweight e commerciali) in locale o in remoto. Ho dunque scelto di provare [Kilo Code](https://kilo.ai/) e [Cline](https://cline.bot/); entrambi sono disponibili come estensioni di molti dei principali IDE, tra i quali ho scelto [VS Code](https://code.visualstudio.com/).
 
 ## Lo scenario di test
 Come scenario di test, di nuovo ho scelto di "proseguire lo sviluppo" del piccolo progetto opensource ([onnx-model-generator-docker](https://github.com/asoldano/onnx-model-generator-docker)) che già avevo usato in precedenza: in sintesi, ricordo che si tratta di un servizio REST Dockerizzato che converte modelli HuggingFace in formato Open Neural Network Exchange (ONNX) utilizzando la libreria _onnxruntime-genai_: riceve una richiesta HTTP e restituisce un modello ottimizzato pronto da scaricare.
@@ -40,9 +40,11 @@ Infine, ho anche rieseguito qualche prova con Cline abbinato allo stesso [GPT-OS
 
 ### Configurazione
 Dopo aver completato l'installazione in VS Code, Kilo Code si configura per connettersi a differenti tipi di modelli LLM utilizzando la scheda _Providers_ all'interno della sezione _Settings_.
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-conf.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-conf.jpg" alt="Configurazione Kilo Code" style="margin-bottom:20px;" />
 </a>
+
 Nel caso dei modelli remoti, ho selezionato _Z AI_ come API provider (_International_ entrypoint) e copiato la mia API key generata su sito di Z.ai dopo aver sottoscritto il piano _Lite_ (9 USD a trimestre); ho abilitato il _reasoning_ e lasciato invariate tutte le altre impostazioni.
 
 Per utilizzare il modello GLM 4.5-Air in locale, invece, prima di tutto ho avviato il server LMStudio ed eseguito il deploy del modello utilizzando una finestra di contesto di **65k** token, così da avere un buon compromesso tra velocità di inferenza / memoria utilizzata e lunghezza della "conversazione" tra agente e modello. Poi nelle impostazioni di Kilo Code ho selezionato _LM Studio_ della lista di API Provider supportati e scelto _glm-4.5-air_ tra le opzioni presentate automaticamente (ottenute da Kilo Code interrogando il server LM Studio attraverso Open API). Anche qui non ho apportato ulteriori cambiamenti alle impostazioni avanzate.
@@ -67,6 +69,7 @@ Come anticipato sopra, ho sperimentato tre differenti scenari di utilizzo, con t
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm46-C.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm46-C.jpg" style="height:110px;margin:6px;">
 </a>
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm46-D.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm46-D.jpg" style="height:110px;margin:6px;">
 </a>
@@ -88,6 +91,7 @@ Come anticipato sopra, ho sperimentato tre differenti scenari di utilizzo, con t
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm45air-C.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm45air-C.jpg" style="height:110px;margin:6px;">
 </a>
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm45air-D.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-glm45air-D.jpg" style="height:110px;margin:6px;">
 </a>
@@ -109,6 +113,7 @@ Come anticipato sopra, ho sperimentato tre differenti scenari di utilizzo, con t
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-lms-glm45air-C.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-lms-glm45air-C.jpg" style="height:110px;margin:6px;">
 </a>
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/kilo-lms-glm45air-D.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/kilo-lms-glm45air-D.jpg" style="height:110px;margin:6px;">
 </a>
@@ -167,6 +172,7 @@ Qui sotto alcune immagini catturate durante l'esecuzione, come nel caso preceden
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/cline-glm46-C.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/cline-glm46-C.jpg" style="height:110px;margin:6px;">
 </a>
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/cline-glm46-D.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/cline-glm46-D.jpg" style="height:110px;margin:6px;">
 </a>
@@ -188,6 +194,7 @@ Qui sotto alcune immagini catturate durante l'esecuzione, come nel caso preceden
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/cline-lms-gpt-C.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/cline-lms-gpt-C.jpg" style="height:110px;margin:6px;">
 </a>
+
 <a href="/assets/images/coding-agent-modelli-locali-vs-api/cline-lms-gpt-D.jpg" target="_blank">
   <img src="/assets/images/coding-agent-modelli-locali-vs-api/cline-lms-gpt-D.jpg" style="height:110px;margin:6px;">
 </a>
@@ -201,11 +208,11 @@ Qui sotto alcune immagini catturate durante l'esecuzione, come nel caso preceden
 ## Analisi risultati
 
 Sebbene sia stato possibile completare il task richiesto in tutti gli scenari, **la qualità delle soluzioni ottenute non è necessariamente la stessa**. Invece di effettuare il merge di una delle implementazioni sul main del progetto, ho creato un branch differente per ognuno degli scenari provati:
-* Kilo Code + GLM 4.6 remoto: https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.6
-* Kilo Code + GLM 4.5-Air remoto: https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.5-air
-* Kilo Code + GLM 4.5-Air locale:https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-lms-glm-4.5-air-65k
-* Cline + GLM 4.6 remoto: https://github.com/asoldano/onnx-model-generator-docker/tree/cline-glm-4.6-200k
-* Cline + GPT-OSS 120B locale: https://github.com/asoldano/onnx-model-generator-docker/tree/cline-lms-gtp-oss-120b-64k 
+* Kilo Code + GLM 4.6 remoto: [https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.6](https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.6)
+* Kilo Code + GLM 4.5-Air remoto: [https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.5-air](https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-glm-4.5-air)
+* Kilo Code + GLM 4.5-Air locale: [https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-lms-glm-4.5-air-65k](https://github.com/asoldano/onnx-model-generator-docker/tree/kilo-lms-glm-4.5-air-65k)
+* Cline + GLM 4.6 remoto: [https://github.com/asoldano/onnx-model-generator-docker/tree/cline-glm-4.6-200k](https://github.com/asoldano/onnx-model-generator-docker/tree/cline-glm-4.6-200k)
+* Cline + GPT-OSS 120B locale: [https://github.com/asoldano/onnx-model-generator-docker/tree/cline-lms-gtp-oss-120b-64k](https://github.com/asoldano/onnx-model-generator-docker/tree/cline-lms-gtp-oss-120b-64k) 
 
 Per una valutazione imparziale e competente dei risultati, ho poi generato le patch corrispondenti alle modifiche su ognuno dei branch a partire dal branch point e le ho sottomesse a *Google Gemini 3*.
 
@@ -230,7 +237,7 @@ In ottica di merge sul main del progetto, probabilmente per mantenere una certa 
 
 ## Conclusioni
 Prima di saltare alle conclusioni, alcune considerazioni:
-* l'esperimento si basa chiaramente su un'osservazione estremamente limitata e va considerata la natura indeterministica / probabilistica dei modelli... quindi non ci sbilanciamo più tanto ;-)
+* l'esperimento si basa chiaramente su un'osservazione estremamente limitata e va considerata la natura indeterministica / probabilistica dei modelli... quindi non ci sbilanciamo più di tanto ;-)
 * ci sono sicuramente margini di miglioramento / tuning a livello della configurazione degli agenti Cline e Kilo Code.
 
 Detto questo, dopo le prove qui descritte ecco i punti che ci portiamo a casa:
