@@ -6,13 +6,13 @@ excerpt: "Proviamo alcuni workflow ComfyUI basati su Z-Image + Qwen3-VL e ragion
 author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/modelli-vl-meta-prompting/IMG_7400.jpg
-  overlay_filter: 0.6
+  overlay_image: /assets/images/modelli-vl-meta-prompting/banner.jpg
+  overlay_filter: 0.5
 ---
 
 <style>
 .page-scroll-box {
-  max-height: 15em;   /* ~10 righe */
+  max-height: 30em;   /* ~20 righe */
   overflow-y: auto;
   overflow-x: hidden;      /* niente scroll orizzontale */
   white-space: pre-wrap;  /* mantiene i newline MA va a capo */
@@ -188,7 +188,7 @@ Il linguaggio è sicuramente più ricco rispetto al preset `Simple`, l'abbondant
 L'immagine generata a partire dal testo è effettivamente un po' più espressiva, ad esempio per i colori del cielo. Abbiamo sempre le strisce bianche sull'asfalto.
 
 <a href="/assets/images/modelli-vl-meta-prompting/4B-Detailed.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/4B-Detailed.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/4B-Detailed.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-4B-Instruct con Ultra Detailed Description
