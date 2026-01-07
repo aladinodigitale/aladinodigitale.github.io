@@ -12,8 +12,11 @@ header:
 
 <style>
 .page-scroll-box {
-  max-height: 7.5em;   /* ~5 righe */
+  max-height: 15em;   /* ~10 righe */
   overflow-y: auto;
+  overflow-x: hidden;      /* niente scroll orizzontale */
+  white-space: pre-wrap;  /* mantiene i newline MA va a capo */
+  word-break: break-word;
   padding: 8px 10px;
   border: 1px solid #ccc;
   background: #f8f8f8;
@@ -144,7 +147,7 @@ Un miglioramento interessante — che non escludo di implementare con una PR —
 
 E' dunque giunto il momento di provare il workflow presentato. Ho selezionato l'immagine di riferimento da usare per i test attingendo dal [portfolio di Milagro](https://www.photomilagro.com/portfolio/):
 <a href="/assets/images/modelli-vl-meta-prompting/IMG_7400.jpg" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/IMG_7400.jpg" style="height:300px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/IMG_7400.jpg" style="margin:6px;">
 </a>
 
 Le prove sono state eseguite **interamente in locale**, sulla mia macchina basata su **AMD Strix Halo**, senza ricorrere ad API cloud o servizi esterni. Al solito, questo è un aspetto importante: al netto del non determinismo AI, l’esperimento è riproducibile e non dipende da infrastrutture proprietarie.
@@ -160,8 +163,9 @@ In termini di tempi di esecuzione sulla mia macchina, il flusso completo ha rich
 
 ## Prove con i diversi preset
 Per cominciare, ho eseguito varie prove configurando il nodo QwenVL affinché utilizzasse il modello `Qwen3-VL-Instruct` da 4 miliardi di parametri con numero massimo di token pari a 2048 (così da evitare troncamenti) e differenti preset.
+
 <a href="/assets/images/modelli-vl-meta-prompting/I2T-QwenVL-config.jpg" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/I2T-QwenVL-config.jpg" style="height:300px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/I2T-QwenVL-config.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-4B-Instruct con Simple Description
@@ -170,8 +174,9 @@ La descrizione testuale generata con il preset `Simple Description` rispecchia l
 Two classic Porsche sports cars—a black 911 Turbo and a white 911—parked on an asphalt lot against a backdrop of rugged mountains under a dramatic, cloudy sky at dusk.
 </pre>
 L'immagine generata a partire dal testo, utilizzato come prompt, ne segue le indicazioni correttamente: abbiamo due classiche Porsche 911, il riferimento al parcheggio porta ad avere strisce bianche a terra, le montagne e il cielo sono realistici ma necessariamente differenti da quanto osservabile nell'immagine di riferimento.
+
 <a href="/assets/images/modelli-vl-meta-prompting/4B-Simple.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/4B-Simple.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/4B-Simple.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-4B-Instruct con Detailed Description
@@ -181,6 +186,7 @@ Under a vast, moody sky streaked with twilight hues of orange and gray, two icon
 </pre>
 Il linguaggio è sicuramente più ricco rispetto al preset `Simple`, l'abbondante uso di aggettivi contribuisce a definire meglio l'atmosfera e l'`emozione` che l'immagine dovrebbe trasmettere; inoltre viene recepito il fatto che le auto sono due modelli differenti, per Qwen la nera più moderna e la bianca classica / vintage.
 L'immagine generata a partire dal testo è effettivamente un po' più espressiva, ad esempio per i colori del cielo. Abbiamo sempre le strisce bianche sull'asfalto.
+
 <a href="/assets/images/modelli-vl-meta-prompting/4B-Detailed.png" target="_blank">
   <img src="/assets/images/modelli-vl-meta-prompting/4B-Detailed.jpg" style="height:800px;margin:6px;">
 </a>
@@ -208,7 +214,7 @@ In essence, we witness not just automobiles but living sculptures born from engi
 In termini di resa fotografica, l'immagine prodotta da Z-Image interpretando (attraverso Qwen3) il prompt qui sopra migliora sicuramente il risultato rispetto ai casi precedenti sia come qualità dei dettagli che come somiglianza all'originale, pur rimanendo comunque distante. Alcuni dei dettagli presenti nel prompt (la scritta PORSCHE sull'auto bianca, ad esempio) risultano mancanti. 
 
 <a href="/assets/images/modelli-vl-meta-prompting/4B-UltraDetailed.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/4B-UltraDetailed.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/4B-UltraDetailed.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-4B-Instruct con Cinematic Description
@@ -220,7 +226,7 @@ In this cinematic widescreen composition, two legendary Porsche sports cars — 
 I colori, le ombre, etc dell'immagine generata rispecchiano, almeno in parte, la poesia del testo. Chiaramente il preset in questo caso influenza esplicitamente la resa finale, tuttavia complice la tipologia dell'immagine di riferimento, in qualche modo "cinematografica" già di per sè, abbiamo in generale una bella foto.
 
 <a href="/assets/images/modelli-vl-meta-prompting/4B-Cinematic.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/4B-Cinematic.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/4B-Cinematic.jpg" style="margin:6px;">
 </a>
 
 
@@ -314,7 +320,7 @@ Da notare che la versione del custom node QwenVL utilizzata non sembra effettuar
 In ogni caso, complice anche il formato quadrato esplicitamente richiesto in fase di generazione, l'immagine generata sembra non rispettare appieno le indicazioni riguardo l'inquadratura: la ripresa avrebbe potuto essere più grandangolare e l'uso della tecnica dello spazio negativo è sostanzialmente assente, tanto che la scritta PORSCHE sull'auto bianca è quasi completamente coperta dall'auto nera.
 
 <a href="/assets/images/modelli-vl-meta-prompting/4B-DetAnalysis.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/4B-DetAnalysis.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/4B-DetAnalysis.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-8B-Instruct con Detailed Analysis
@@ -396,8 +402,9 @@ In summary, this image successfully marries technical precision with artistic vi
 </pre>
 
 La descrizione risulta più dettagliata della corrispondente prodotta dal modello 4B, ma il risultato finale al termine della fase di generazione della nuova immagine è solo leggermente migliore. In ogni case, forse la migliore immagine fino a questo punto.
+
 <a href="/assets/images/modelli-vl-meta-prompting/8B-DetAnalysis.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/8B-DetAnalysis.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/8B-DetAnalysis.jpg" style="margin:6px;">
 </a>
 
 ### Qwen3-VL-8B-Instruct con Cinematic Description
@@ -411,8 +418,9 @@ Under a vast, brooding sky streaked with twilight’s bruised purples and molten
 </pre>
 
 La descrizione enfatizza l'impatto visivo atteso per l'immagine, tuttavia in generale il testo prodotto non si discosta in maniera significativa da quello prodotto dal modello più piccolo. Anche l'immagine generata appare molto simile (i fari dell'auto nera però sono accesi questa volta).
+
 <a href="/assets/images/modelli-vl-meta-prompting/8B-Cinematic.png" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/8B-Cinematic.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/8B-Cinematic.jpg" style="margin:6px;">
 </a>
 
 
@@ -431,11 +439,13 @@ Per favore analizza l'immagine allegata e scrivimi un prompt di miglioria specif
 </pre>
 
 Opportunamente tradotto (da Gemini) e leggermente adattato per il campo `Formula`, ecco il nuovo prompt inserito nel workflow:
+
 <a href="/assets/images/modelli-vl-meta-prompting/formula.jpg" target="_blank">
-  <img src="/assets/images/modelli-vl-meta-prompting/formula.jpg" style="height:800px;margin:6px;">
+  <img src="/assets/images/modelli-vl-meta-prompting/formula.jpg" style="margin:6px;">
 </a>
 
 Un paio di esempi di immagini generate con preset `Detailed Description` a partire dal prompt semplice:
+
 <a href="/assets/images/modelli-vl-meta-prompting/meta-prompt1.png" target="_blank">
   <img src="/assets/images/modelli-vl-meta-prompting/meta-prompt1.jpg" style="margin:6px;">
 </a>
