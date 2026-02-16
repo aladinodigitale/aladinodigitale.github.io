@@ -99,7 +99,7 @@ Guardiamo ad esempio il comportamento con backend Vulkan.
 ### Token generation (Vulkan)
 
 <a href="/assets/images/benchmark-modelli-agenti/confronto-tg-vulkan-radv.png" target="_blank">
-  <img src="/assets/images/benchmark-modelli-agenti/confronto-pg-vulkan-radv.png" style="margin:6px;">
+  <img src="/assets/images/benchmark-modelli-agenti/confronto-tg-vulkan-radv.png" style="margin:6px;">
 </a>
 
 E lo stesso con ROCm:
