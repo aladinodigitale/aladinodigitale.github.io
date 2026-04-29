@@ -22,7 +22,7 @@ Il prefill si affronta con ottimizzazioni come riuso della KV-cache, prefix cach
 
 E questa fase può diventare un problema, soprattutto quando si usano modelli locali densi, grandi e qualitativamente interessanti, ma non velocissimi in generazione.
 
-Nel mio caso un modello da testare è sicuramente [*Qwen3.6 27B*](https://huggingface.co/Qwen/Qwen3.6-27B), denso, interessante per attività di coding, ma non esattamente un fulmine quando deve generare molti token su hardware locale. Ho una macchina con 128GB di memoria, quindi posso caricarei anche modelli relativamente importanti, ma questo non significa automaticamente avere una velocità di decode paragonabile a quella di un servizio cloud.
+Nel mio caso un modello da testare è sicuramente [*Qwen3.6 27B*](https://huggingface.co/Qwen/Qwen3.6-27B), denso, interessante per attività di coding, ma non esattamente un fulmine quando deve generare molti token su hardware locale. Ho una macchina basata su AMD Ryzen AI Max+ 395 con 128GB di memoria unificats, quindi posso caricare anche modelli relativamente importanti, ma questo non significa automaticamente avere una velocità di decode paragonabile a quella di un servizio cloud.
 
 Da qui nasce l'interesse per lo **speculative decoding**, inteso come tassello nello stack di ottimizzazioni che rendono sempre più praticabile l'uso locale di modelli avanzati.
 
@@ -57,7 +57,7 @@ Lo speculative decoding non è un'idea nata ieri. La cosa interessante è che st
 
 Da un lato ci sono applicazioni come [LM Studio](https://lmstudio.ai), che permettono di attivare speculative decoding in modo relativamente semplice e, cosa molto utile dal punto di vista didattico, mostrano visivamente i token proposti dal draft model e accettati dal modello principale. LM Studio ha documentato questa funzionalità spiegando che il draft model deve essere compatibile con il modello principale, in particolare lato vocabolario/tokenizer.
 
-Dall'altro lato c'è **llama.cpp**, che nelle versioni recenti sta sperimentando varie forme di speculative decoding, incluse modalità con draft model e modalità n-gram. La [documentazione attuale di llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md) elenca più implementazioni per `llama-server`, tra cui `draft`, `ngram-cache`, `ngram-simple`, `ngram-map-k` e `ngram-mod`. ([GitHub][1])
+Dall'altro lato c'è **llama.cpp**, che nelle versioni recenti sta sperimentando varie forme di speculative decoding, incluse modalità con draft model e modalità n-gram. La [documentazione attuale di llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md) elenca più implementazioni per `llama-server`, tra cui `draft`, `ngram-cache`, `ngram-simple`, `ngram-map-k` e `ngram-mod`.
 
 Questo è rilevante perché, con modelli recenti come Qwen3.5 e Qwen3.6, il supporto e le combinazioni praticabili sono in evoluzione rapida. Una [PR recente di llama.cpp](https://github.com/thc1006/qwen3.6-speculative-decoding-rtx3090) (#19493) ha ad esempio abilitato il draft-model speculative decoding per i modelli Qwen3.5/3.6 MoE (Mixture of Experts), aprendo la strada a nuovi esperimenti.
 
@@ -89,7 +89,7 @@ Vediamo dunque come la risposta ad un prompt direttamente nella console di LMStu
 
 Una volta attivato speculative decoding molti token (in verde qui sotto) vengono correttamente indovinati dal modello draft Qwen 3 0.6B, portando ad una generazione media attorno ai 24 token/s.
 
-{% include figure image_path="/assets/images/speculative-decoding/lmstudio-spec-dec.png" alt="Chat LM Studio con token/s visibili" caption="Chat in LM Studio con velocità dei token visibile." %}
+{% include figure image_path="/assets/images/speculative-decoding/lmstudio-spec-dec.png" alt="Chat LM Studio con token/s visibili" caption="Chat in LM Studio con speculative decoding attivo." %}
 
 Quello che voglio mostrare è semplice:
 
