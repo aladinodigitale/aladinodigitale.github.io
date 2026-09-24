@@ -1,6 +1,6 @@
 ---
 title: "Quando l'open source sblocca il silicio: il caso AMD e l'inferenza AI locale"
-date: 2026-09-25
+date: 2026-09-24
 excerpt: "Il vantaggio di NVIDIA nell'AI non sta solo nel silicio, ma nello software che lo circonda. Attorno ad AMD Strix Halo sta però emergendo un ecosistema open source che sta imparando a sfruttare l'hardware meglio e più in fretta di quanto il vendor da solo avrebbe potuto: formati di quantizzazione dedicati, runtime che sfruttano istruzioni specifiche della GPU e ottimizzazioni nate dalla community."
 tags: [AI locale, open source, AMD, Strix Halo, ROCm, llama.cpp, quantizzazione, LLM, inferenza]
 author: alessio
