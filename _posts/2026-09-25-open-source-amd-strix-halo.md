@@ -6,7 +6,7 @@ tags: [AI locale, open source, AMD, Strix Halo, ROCm, llama.cpp, quantizzazione,
 author: alessio
 classes: wide
 header:
-  overlay_image: /assets/images/open-source-amd-strix-halo/overlay.png
+  overlay_image: /assets/images/open-source-amd-strix-halo/overlay.jpg
   overlay_filter: 0.5
 ---
 
